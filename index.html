@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#fff5f7" />
+    <title>Will you be my Valentine, Nethmi? 💕</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-family: "Quicksand", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #fff5f7 0%,
+          #ffe4ec 25%,
+          #ffffff 50%,
+          #ffd6e0 75%,
+          #fff0f3 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Floating hearts background */
+      .hearts-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 20px;
+        opacity: 0.35;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .heart:nth-child(20) {
+        left: 10%;
+        top: 20%;
+        animation-delay: 0s;
+      }
+      .heart:nth-child(21) {
+        left: 80%;
+        top: 30%;
+        animation-delay: 1s;
+        font-size: 28px;
+      }
+      .heart:nth-child(22) {
+        left: 50%;
+        top: 80%;
+        animation-delay: 2s;
+        font-size: 16px;
+      }
+      .heart:nth-child(23) {
+        left: 20%;
+        top: 60%;
+        animation-delay: 0.5s;
+        font-size: 24px;
+      }
+      .heart:nth-child(24) {
+        left: 70%;
+        top: 70%;
+        animation-delay: 1.5s;
+      }
+      .heart:nth-child(25) {
+        left: 30%;
+        top: 10%;
+        animation-delay: 2.5s;
+        font-size: 22px;
+      }
+      .heart:nth-child(26) {
+        left: 90%;
+        top: 50%;
+        animation-delay: 0.8s;
+      }
+      .heart:nth-child(27) {
+        left: 5%;
+        top: 85%;
+        animation-delay: 1.2s;
+        font-size: 18px;
+      }
+      .heart:nth-child(28) {
+        left: 42%;
+        top: 45%;
+        animation-delay: 0.3s;
+        font-size: 14px;
+      }
+      .heart:nth-child(29) {
+        left: 65%;
+        top: 15%;
+        animation-delay: 1.8s;
+        font-size: 20px;
+      }
+      .heart:nth-child(30) {
+        left: 15%;
+        top: 40%;
+        animation-delay: 2.2s;
+        font-size: 18px;
+      }
+      .heart:nth-child(31) {
+        left: 55%;
+        top: 65%;
+        animation-delay: 0.6s;
+        font-size: 24px;
+      }
+      .heart:nth-child(32) {
+        left: 95%;
+        top: 75%;
+        animation-delay: 1.4s;
+        font-size: 16px;
+      }
+      .heart:nth-child(33) {
+        left: 35%;
+        top: 88%;
+        animation-delay: 2s;
+        font-size: 22px;
+      }
+      .heart:nth-child(34) {
+        left: 78%;
+        top: 42%;
+        animation-delay: 0.9s;
+        font-size: 18px;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.35;
+        }
+        50% {
+          transform: translateY(-20px) scale(1.1);
+          opacity: 0.5;
+        }
+      }
+
+      .heart.float-slow {
+        animation: float 8s ease-in-out infinite;
+      }
+      .heart.float-fast {
+        animation: float 4s ease-in-out infinite;
+      }
+      .heart.drift-x {
+        animation: floatDriftX 7s ease-in-out infinite;
+      }
+      .heart.spin-soft {
+        animation: floatSpin 9s ease-in-out infinite;
+      }
+
+      @keyframes floatDriftX {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.35;
+        }
+        33% {
+          transform: translate(30px, -15px) scale(1.05);
+          opacity: 0.5;
+        }
+        66% {
+          transform: translate(-20px, -25px) scale(0.95);
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes floatSpin {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-25px) rotate(10deg) scale(1.15);
+          opacity: 0.5;
+        }
+      }
+
+      /* Bokeh / soft circles */
+      .bokeh {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.25;
+        animation: bokehPulse 6s ease-in-out infinite;
+      }
+
+      .bokeh:nth-child(1) {
+        width: 120px;
+        height: 120px;
+        left: 5%;
+        top: 10%;
+        background: #ffb6c1;
+        animation-delay: 0s;
+      }
+      .bokeh:nth-child(2) {
+        width: 180px;
+        height: 180px;
+        left: 75%;
+        top: 15%;
+        background: #ffc0cb;
+        animation-delay: 1s;
+      }
+      .bokeh:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 70%;
+        background: #ffd6e0;
+        animation-delay: 2s;
+      }
+      .bokeh:nth-child(4) {
+        width: 150px;
+        height: 150px;
+        left: 15%;
+        top: 75%;
+        background: #ffb6c1;
+        animation-delay: 0.5s;
+      }
+      .bokeh:nth-child(5) {
+        width: 90px;
+        height: 90px;
+        left: 85%;
+        top: 60%;
+        background: #ffd4e5;
+        animation-delay: 1.5s;
+      }
+      .bokeh:nth-child(6) {
+        width: 130px;
+        height: 130px;
+        left: 30%;
+        top: 35%;
+        background: #ffc0cb;
+        animation-delay: 2.5s;
+      }
+      .bokeh:nth-child(7) {
+        width: 70px;
+        height: 70px;
+        left: 60%;
+        top: 25%;
+        background: #ffd6e0;
+        animation-delay: 0.8s;
+      }
+      .bokeh:nth-child(8) {
+        width: 110px;
+        height: 110px;
+        left: 8%;
+        top: 50%;
+        background: #ffb6c1;
+        animation-delay: 1.8s;
+      }
+      .bokeh:nth-child(9) {
+        width: 160px;
+        height: 160px;
+        left: 70%;
+        top: 80%;
+        background: #ffd4e5;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes bokehPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.2;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.35;
+        }
+      }
+
+      /* Sparkles / tiny dots */
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #c45c7a;
+        opacity: 0;
+        animation: sparkle 3s ease-in-out infinite;
+      }
+
+      .sparkle:nth-child(10) {
+        left: 12%;
+        top: 22%;
+        animation-delay: 0s;
+      }
+      .sparkle:nth-child(11) {
+        left: 88%;
+        top: 18%;
+        animation-delay: 0.4s;
+      }
+      .sparkle:nth-child(12) {
+        left: 45%;
+        top: 85%;
+        animation-delay: 0.8s;
+      }
+      .sparkle:nth-child(13) {
+        left: 72%;
+        top: 42%;
+        animation-delay: 0.2s;
+      }
+      .sparkle:nth-child(14) {
+        left: 25%;
+        top: 55%;
+        animation-delay: 0.6s;
+      }
+      .sparkle:nth-child(15) {
+        left: 55%;
+        top: 12%;
+        animation-delay: 1s;
+      }
+      .sparkle:nth-child(16) {
+        left: 92%;
+        top: 68%;
+        animation-delay: 0.3s;
+      }
+      .sparkle:nth-child(17) {
+        left: 18%;
+        top: 78%;
+        animation-delay: 0.7s;
+      }
+      .sparkle:nth-child(18) {
+        left: 38%;
+        top: 38%;
+        animation-delay: 0.5s;
+      }
+      .sparkle:nth-child(19) {
+        left: 65%;
+        top: 55%;
+        animation-delay: 0.9s;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Soft vignette / glow overlay */
+      .bg-vignette {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(
+          ellipse at center,
+          transparent 40%,
+          rgba(255, 182, 193, 0.08) 70%,
+          rgba(255, 192, 203, 0.12) 100%
+        );
+        z-index: 0;
+      }
+
+      /* Music toggle - top right */
+      .music-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 100;
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #ffe4ec 0%, #ffd6e0 100%);
+        box-shadow:
+          0 4px 20px rgba(180, 80, 100, 0.35),
+          0 0 0 2px rgba(255, 182, 193, 0.5);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+      }
+
+      .music-toggle:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 24px rgba(180, 80, 100, 0.45);
+      }
+
+      .music-toggle.muted {
+        background: linear-gradient(145deg, #e8d4dc 0%, #d4c0c8 100%);
+        opacity: 0.85;
+      }
+
+      .music-toggle .icon-muted {
+        display: none;
+      }
+
+      .music-toggle.muted .icon-music {
+        display: none;
+      }
+
+      .music-toggle.muted .icon-muted {
+        display: block;
+      }
+
+      /* Sketch-style stickers – main page */
+      .stickers-wrap {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      .sticker {
+        position: absolute;
+        opacity: 0.9;
+        filter: drop-shadow(0 2px 8px rgba(180, 80, 100, 0.2));
+        animation: stickerFloat 5s ease-in-out infinite;
+      }
+
+      .sticker svg {
+        display: block;
+      }
+
+      .sticker:nth-child(1) {
+        left: 8%;
+        top: 18%;
+        width: 56px;
+        height: 56px;
+        animation-delay: 0s;
+        transform: rotate(-8deg);
+      }
+      .sticker:nth-child(2) {
+        right: 12%;
+        top: 22%;
+        width: 48px;
+        height: 48px;
+        animation-delay: 0.5s;
+        transform: rotate(6deg);
+      }
+      .sticker:nth-child(3) {
+        left: 15%;
+        bottom: 25%;
+        width: 52px;
+        height: 52px;
+        animation-delay: 1s;
+        transform: rotate(5deg);
+      }
+      .sticker:nth-child(4) {
+        right: 10%;
+        bottom: 20%;
+        width: 50px;
+        height: 50px;
+        animation-delay: 0.3s;
+        transform: rotate(-5deg);
+      }
+      .sticker:nth-child(5) {
+        left: 50%;
+        top: 12%;
+        width: 44px;
+        height: 44px;
+        margin-left: -22px;
+        animation-delay: 0.8s;
+        transform: rotate(-3deg);
+      }
+      .sticker:nth-child(6) {
+        right: 22%;
+        top: 45%;
+        width: 46px;
+        height: 46px;
+        animation-delay: 0.2s;
+        transform: rotate(10deg);
+      }
+      .sticker:nth-child(7) {
+        left: 25%;
+        top: 48%;
+        width: 42px;
+        height: 42px;
+        animation-delay: 0.6s;
+        transform: rotate(-10deg);
+      }
+      .sticker:nth-child(8) {
+        left: 5%;
+        top: 55%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 1.2s;
+        transform: rotate(4deg);
+      }
+      .sticker:nth-child(9) {
+        right: 8%;
+        top: 65%;
+        width: 48px;
+        height: 48px;
+        animation-delay: 0.4s;
+        transform: rotate(-6deg);
+      }
+
+      @keyframes stickerFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(var(--r, 0deg));
+        }
+        50% {
+          transform: translateY(-8px) rotate(calc(var(--r, 0deg) + 4deg));
+        }
+      }
+
+      .sticker:nth-child(1) {
+        --r: -8deg;
+      }
+      .sticker:nth-child(2) {
+        --r: 6deg;
+      }
+      .sticker:nth-child(3) {
+        --r: 5deg;
+      }
+      .sticker:nth-child(4) {
+        --r: -5deg;
+      }
+      .sticker:nth-child(5) {
+        --r: -3deg;
+      }
+      .sticker:nth-child(6) {
+        --r: 10deg;
+      }
+      .sticker:nth-child(7) {
+        --r: -10deg;
+      }
+      .sticker:nth-child(8) {
+        --r: 4deg;
+      }
+      .sticker:nth-child(9) {
+        --r: -6deg;
+      }
+
+      .container {
+        text-align: center;
+        padding: 2rem 2rem 4rem;
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .question-screen h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        font-weight: 700;
+        color: #b84d6b;
+        text-shadow: 0 0 30px rgba(200, 100, 130, 0.3);
+        margin-bottom: 0.5rem;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 20px rgba(200, 100, 130, 0.25);
+        }
+        to {
+          text-shadow: 0 0 40px rgba(220, 120, 150, 0.4);
+        }
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        color: #c45c7a;
+        margin-bottom: 3rem;
+        font-weight: 500;
+      }
+
+      .buttons-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        min-height: 180px;
+        position: relative;
+      }
+
+      .btn {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        min-height: 48px;
+        min-width: 48px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .btn-yes {
+        background: linear-gradient(145deg, #e85a7a, #c44569);
+        color: white;
+        padding: 18px 42px;
+        font-size: 1.4rem;
+        --scale: 1;
+        transform: scale(var(--scale));
+        box-shadow: 0 6px 30px rgba(200, 80, 110, 0.4);
+      }
+
+      .btn-yes:hover {
+        transform: scale(calc(var(--scale) * 1.05));
+        box-shadow: 0 8px 40px rgba(200, 80, 110, 0.5);
+      }
+
+      .btn-yes:active {
+        transform: scale(calc(var(--scale) * 0.98));
+      }
+
+      .btn-no {
+        background: linear-gradient(145deg, #d4a5b0, #c4909a);
+        color: #8b5a65;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(120px, -50%);
+        transition:
+          left 0.2s ease-out,
+          top 0.2s ease-out,
+          transform 0.2s,
+          opacity 0.3s;
+      }
+
+      .btn-no:hover {
+        transform: scale(1.05);
+      }
+
+      /* Screen transitions */
+      .question-screen,
+      .success-screen,
+      .bouquet-screen,
+      .ring-screen {
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+      }
+
+      .question-screen.hide,
+      .success-screen.hide,
+      .bouquet-screen.hide,
+      .ring-screen.hide {
+        opacity: 0;
+        transform: scale(0.98);
+        pointer-events: none;
+      }
+
+      /* Success screen - hidden by default */
+      .success-screen {
+        display: none;
+        animation: fadeIn 0.6s ease;
+      }
+
+      .success-screen.show {
+        display: block;
+        animation: fadeIn 0.6s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .personal-message {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(1.35rem, 4vw, 1.75rem);
+        color: #b84d6b;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .success-screen h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2.5rem, 7vw, 4rem);
+        color: #b84d6b;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 30px rgba(200, 100, 130, 0.4);
+      }
+
+      .success-screen p {
+        font-size: 1.2rem;
+        color: #c45c7a;
+        margin-bottom: 2rem;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hearts-celebration {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        animation: pulse 0.6s ease infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.9;
+        }
+      }
+
+      .question-screen.hide,
+      .success-screen.hide,
+      .bouquet-screen.hide,
+      .ring-screen.hide {
+        display: none !important;
+      }
+
+      .btn-next {
+        background: linear-gradient(145deg, #e85a7a, #c44569);
+        color: white;
+        padding: 16px 36px;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        box-shadow: 0 6px 30px rgba(200, 80, 110, 0.4);
+      }
+
+      .btn-next:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 40px rgba(200, 80, 110, 0.5);
+      }
+
+      /* Bouquet screen */
+      .bouquet-screen,
+      .ring-screen {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .bouquet-screen.show,
+      .ring-screen.show {
+        display: flex;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .bouquet-screen h2,
+      .ring-screen h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        color: #b84d6b;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 20px rgba(200, 100, 130, 0.3);
+      }
+
+      .bouquet-wrap {
+        position: relative;
+        margin: 2rem 0;
+        animation: bouquetAppear 1s ease;
+      }
+
+      @keyframes bouquetAppear {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .bouquet-photo {
+        max-width: 320px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow:
+          0 12px 40px rgba(180, 80, 100, 0.25),
+          0 0 0 3px rgba(255, 182, 193, 0.4);
+        animation: bouquetAppear 1s ease;
+      }
+
+      .bouquet-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .bouquet-screen .btn-next,
+      .ring-screen .btn-next {
+        margin-top: 2rem;
+      }
+
+      /* Ring screen */
+      .ring-wrap {
+        position: relative;
+        margin: 2rem 0;
+        animation: ringAppear 1.2s ease;
+      }
+
+      @keyframes ringAppear {
+        from {
+          opacity: 0;
+          transform: scale(0.3) rotate(-20deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      .ring-display {
+        font-size: 8rem;
+        line-height: 1;
+        filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5))
+          drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+        animation: ringShine 2s ease-in-out infinite;
+      }
+
+      @keyframes ringShine {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5))
+            drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+          transform: scale(1);
+        }
+        50% {
+          filter: drop-shadow(0 0 50px rgba(255, 223, 100, 0.7))
+            drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+          transform: scale(1.05);
+        }
+      }
+
+      .ring-screen p {
+        font-size: 1.15rem;
+        color: #c45c7a;
+        max-width: 320px;
+        margin: 1rem auto 0;
+        line-height: 1.5;
+      }
+
+      .ring-screen {
+        padding-bottom: 3rem;
+      }
+
+      .btn-show-promise {
+        background: linear-gradient(145deg, #e85a7a, #c44569);
+        color: white;
+        padding: 14px 32px;
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        box-shadow: 0 6px 30px rgba(200, 80, 110, 0.4);
+      }
+
+      .btn-show-promise:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 40px rgba(200, 80, 110, 0.5);
+      }
+
+      .promise-box {
+        display: none;
+        max-width: 520px;
+        margin: 2rem auto 0;
+        padding: 2rem 2.25rem;
+        background: linear-gradient(
+          145deg,
+          #ffe4ec 0%,
+          #ffd4e5 25%,
+          #ffc0cb 50%,
+          #ffb6c1 75%,
+          #ffd6e0 100%
+        );
+        border-radius: 24px;
+        box-shadow:
+          0 0 0 3px rgba(255, 182, 193, 0.6),
+          0 0 40px rgba(255, 105, 180, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        border: 2px solid rgba(255, 182, 193, 0.8);
+        text-align: left;
+        animation: promiseFadeIn 0.6s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .promise-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b9d, #ffb6c1, #ff6b9d);
+        border-radius: 24px 24px 0 0;
+      }
+
+      .promise-box.show {
+        display: block;
+      }
+
+      @keyframes promiseFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .promise-box .promise-text {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: #8b3a4d;
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      .promise-box .promise-heart {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .btn-print,
+      .btn-replay {
+        background: linear-gradient(145deg, #e8d4dc 0%, #d4c0c8 100%);
+        color: #8b5a65;
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-print:hover,
+      .btn-replay:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .ring-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      /* Confetti container */
+      .confetti-wrap {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+      }
+
+      .confetti-piece {
+        position: absolute;
+        font-size: 1.2rem;
+        animation: confettiFall 2.5s ease-out forwards;
+        opacity: 0.9;
+        top: 0;
+      }
+
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(100vh) translateX(var(--dx, 0)) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      /* Cursor-follow hearts */
+      .cursor-hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 5;
+        overflow: hidden;
+      }
+
+      .cursor-heart {
+        position: absolute;
+        font-size: 1rem;
+        opacity: 0.5;
+        transition: transform 0.15s ease-out;
+        filter: drop-shadow(0 0 4px rgba(255, 182, 193, 0.5));
+      }
+
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        background: linear-gradient(
+          135deg,
+          #fff5f7 0%,
+          #ffe4ec 50%,
+          #ffd6e0 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 0.5s ease,
+          visibility 0.5s ease;
+      }
+
+      .loading-screen.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .loading-heart {
+        font-size: 4rem;
+        animation: loadingPulse 0.8s ease-in-out infinite;
+      }
+
+      .loading-text {
+        font-family: "Dancing Script", cursive;
+        font-size: 1.8rem;
+        color: #b84d6b;
+        margin-top: 1.5rem;
+      }
+
+      .loading-tip {
+        font-size: 0.9rem;
+        color: #c45c7a;
+        margin-top: 0.75rem;
+        opacity: 0.9;
+      }
+
+      @keyframes loadingPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.8;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .btn-yes {
+          padding: 16px 36px;
+          min-height: 52px;
+        }
+        .btn-no {
+          padding: 12px 24px;
+          min-height: 48px;
+        }
+        .music-toggle {
+          width: 52px;
+          height: 52px;
+          top: 0.75rem;
+          right: 0.75rem;
+        }
+      }
+
+      @media print {
+        .loading-screen,
+        .confetti-wrap,
+        .cursor-hearts,
+        .music-toggle,
+        .hearts-bg,
+        .stickers-wrap,
+        .bg-vignette {
+          display: none !important;
+        }
+        body {
+          background: #fff5f7;
+        }
+        .container {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-heart">💕</div>
+      <p class="loading-text">Getting ready for you...</p>
+      <p class="loading-tip">Turn on sound for the full experience 🎵</p>
+    </div>
+    <div class="confetti-wrap" id="confettiWrap" aria-hidden="true"></div>
+    <div class="cursor-hearts" id="cursorHearts" aria-hidden="true"></div>
+    <!-- <button
+      class="music-toggle"
+      id="musicToggle"
+      type="button"
+      title="Toggle music"
+      aria-label="Toggle music"
+    >
+      <span class="icon-music">🎵</span>
+      <span class="icon-muted">🔇</span>
+    </button> -->
+    <!-- Add your own copy of "I Wanna Be Yours" as assets/i-wanna-be-yours.mp3 -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="assets/i-wanna-be-yours.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="bg-vignette"></div>
+    <div class="stickers-wrap" aria-hidden="true">
+      <div class="sticker">
+        <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M28 12c-4 8-16 12-16 20 0 6 7 12 16 12s16-6 16-12c0-8-12-12-16-20z"
+            fill="#ffb6c1"
+            stroke="#b84d6b"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <circle cx="24" cy="26" r="2.5" fill="#333" />
+          <circle cx="32" cy="26" r="2.5" fill="#333" />
+          <path
+            d="M26 32c0 0 2 3 6 3"
+            stroke="#b84d6b"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24 4l5 14h14l-11 9 4 14-12-8-12 8 4-14-11-9h14z"
+            fill="#ffe4ec"
+            stroke="#c45c7a"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            cx="26"
+            cy="26"
+            r="18"
+            fill="#fff"
+            stroke="#b84d6b"
+            stroke-width="2"
+          />
+          <circle cx="22" cy="24" r="2.5" fill="#333" />
+          <circle cx="30" cy="24" r="2.5" fill="#333" />
+          <path
+            d="M24 30c1 2 4 2 4 2s3 0 4-2"
+            stroke="#b84d6b"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <ellipse cx="26" cy="38" rx="4" ry="2" fill="#ffb6c1" />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M25 8c0 0-12 6-12 18 0 10 12 18 12 18s12-8 12-18C37 14 25 8 25 8z"
+            fill="#ffd6e0"
+            stroke="#c45c7a"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <circle cx="22" cy="22" r="2" fill="#333" />
+          <circle cx="28" cy="22" r="2" fill="#333" />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            cx="22"
+            cy="22"
+            r="16"
+            fill="#fff5f7"
+            stroke="#b84d6b"
+            stroke-width="2"
+          />
+          <text
+            x="22"
+            y="28"
+            text-anchor="middle"
+            font-size="14"
+            font-weight="bold"
+            fill="#c45c7a"
+            font-family="Quicksand,sans-serif"
+          >
+            !!
+          </text>
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            cx="23"
+            cy="23"
+            r="18"
+            fill="#ffe4ec"
+            stroke="#b84d6b"
+            stroke-width="2"
+          />
+          <path
+            d="M16 20 Q23 14 30 20"
+            stroke="#c45c7a"
+            stroke-width="1.5"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <circle cx="18" cy="22" r="2" fill="#333" />
+          <circle cx="28" cy="22" r="2" fill="#333" />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            cx="21"
+            cy="21"
+            r="14"
+            fill="#ffb6c1"
+            stroke="#b84d6b"
+            stroke-width="2"
+          />
+          <circle cx="17" cy="19" r="2" fill="#333" />
+          <circle cx="25" cy="19" r="2" fill="#333" />
+          <path
+            d="M18 25c0 0 1.5 2 3 2s3-2 3-2"
+            stroke="#8b3a4d"
+            stroke-width="1"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20 6c-2 4-8 6-8 12 0 4 4 8 8 8s8-4 8-8c0-6-6-8-8-12z"
+            fill="#ffc0cb"
+            stroke="#c45c7a"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="sticker">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            cx="24"
+            cy="20"
+            r="10"
+            fill="#ffd6e0"
+            stroke="#b84d6b"
+            stroke-width="2"
+          />
+          <path
+            d="M18 28 Q24 34 30 28"
+            stroke="#c45c7a"
+            stroke-width="1.2"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <ellipse cx="20" cy="18" rx="2" ry="2.5" fill="#333" />
+          <ellipse cx="28" cy="18" rx="2" ry="2.5" fill="#333" />
+          <path
+            d="M22 14 L24 12 L26 14"
+            stroke="#b84d6b"
+            stroke-width="1"
+            fill="none"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="hearts-bg">
+      <!-- Bokeh soft circles -->
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <!-- Sparkles -->
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <!-- Floating hearts - more with varied motion -->
+      <span class="heart">❤️</span>
+      <span class="heart float-slow">💕</span>
+      <span class="heart float-fast">💗</span>
+      <span class="heart drift-x">❤️</span>
+      <span class="heart spin-soft">💕</span>
+      <span class="heart">💗</span>
+      <span class="heart float-slow">❤️</span>
+      <span class="heart drift-x">💕</span>
+      <span class="heart">💗</span>
+      <span class="heart spin-soft">❤️</span>
+      <span class="heart float-fast">💕</span>
+      <span class="heart">💗</span>
+      <span class="heart drift-x">❤️</span>
+      <span class="heart float-slow">💕</span>
+      <span class="heart">💗</span>
+    </div>
+
+    <div class="container">
+      <div class="question-screen" id="questionScreen">
+        <h1>Will you be my Valentine, Nethmi?</h1>
+        <p class="subtitle">I really like you 💖</p>
+        <div class="buttons-wrap" id="buttonsWrap">
+          <button class="btn btn-yes" id="btnYes" style="--scale: 1">
+            Yes! 💕
+          </button>
+          <button class="btn btn-no" id="btnNo">No</button>
+        </div>
+      </div>
+
+      <div class="success-screen" id="successScreen">
+        <div class="hearts-celebration">💕 ❤️ 💕 ❤️ 💕</div>
+        <h2>Yay! You said yes, Nethmi!</h2>
+        <p>
+          You just made my day. Can't wait to be your Valentine. I love you! 💖
+        </p>
+        <p class="personal-message">
+          I Love you so much my Baby Girl, Nethmi 💕
+        </p>
+        <div class="hearts-celebration">❤️ 💗 ❤️ 💗 ❤️</div>
+        <button class="btn btn-next" id="btnNextToBouquet">Next 💐</button>
+      </div>
+
+      <div class="bouquet-screen" id="bouquetScreen">
+        <h2>For you, my love 🌸</h2>
+        <div class="bouquet-wrap">
+          <div class="bouquet-photo">
+            <img
+              src="assets/bunch-roses-clear-vase-with-ribbon-around-it_1258570-38723.avif"
+              alt="Flower bouquet for Nethmi"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <p style="color: #c45c7a; margin-top: 0.5rem">
+          A bouquet of flowers for you, Nethmi
+        </p>
+        <button class="btn btn-next" id="btnNextToRing">Next 💍</button>
+      </div>
+
+      <div class="ring-screen" id="ringScreen">
+        <h2>And this is for you 💍</h2>
+        <div class="ring-wrap">
+          <div class="ring-display">💍</div>
+        </div>
+        <p>
+          You're the one I want to spend forever with. Will you wear this? 💖
+        </p>
+        <button class="btn btn-show-promise" id="btnShowPromise">
+          Read my promise to you 💕
+        </button>
+        <div class="promise-box" id="promiseBox">
+          <p class="promise-text">
+            From the moment you came into my life, everything changed for the
+            better. You taught me what real love feels like patient, kind, and
+            beautiful. I'm so grateful for every laugh we share, every memory we
+            create, and every dream we build together. I promise to love you
+            today, tomorrow, and always.
+          </p>
+          <div class="promise-heart">💖 ❤️ 💕</div>
+        </div>
+        <div class="ring-actions">
+          <button class="btn btn-replay" id="btnReplay" type="button">
+            🔄 Watch again
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Loading screen - hide when ready + first interaction
+      const loadingScreen = document.getElementById("loadingScreen");
+      function hideLoading() {
+        if (loadingScreen && !loadingScreen.classList.contains("hide")) {
+          loadingScreen.classList.add("hide");
+        }
+      }
+      if (loadingScreen) {
+        window.addEventListener("load", function () {
+          setTimeout(hideLoading, 800);
+        });
+        document.addEventListener("click", hideLoading, { once: true });
+        document.addEventListener("touchstart", hideLoading, {
+          once: true,
+          passive: true,
+        });
+      }
+
+      // // Romantic background music - start on first user interaction (browser autoplay policy)
+      // const bgMusic = document.getElementById("bgMusic");
+      // const musicToggle = document.getElementById("musicToggle");
+      // if (bgMusic) {
+      //   bgMusic.volume = 0.5;
+      //   document.addEventListener(
+      //     "click",
+      //     function startMusicOnce() {
+      //       bgMusic.play().catch(function () {});
+      //     },
+      //     { once: true },
+      //   );
+      // }
+      // if (musicToggle && bgMusic) {
+      //   musicToggle.addEventListener("click", function (e) {
+      //     e.stopPropagation();
+      //     bgMusic.muted = !bgMusic.muted;
+      //     musicToggle.classList.toggle("muted", bgMusic.muted);
+      //     musicToggle.setAttribute(
+      //       "title",
+      //       bgMusic.muted ? "Unmute music" : "Mute music",
+      //     );
+      //     musicToggle.setAttribute(
+      //       "aria-label",
+      //       bgMusic.muted ? "Unmute music" : "Mute music",
+      //     );
+      //   });
+      // }
+
+      // Confetti burst when she says Yes
+      const confettiWrap = document.getElementById("confettiWrap");
+      const hearts = ["💕", "❤️", "💗", "💖", "🌸", "💐"];
+      function runConfetti() {
+        if (!confettiWrap) return;
+        confettiWrap.innerHTML = "";
+        for (var i = 0; i < 50; i++) {
+          var piece = document.createElement("span");
+          piece.className = "confetti-piece";
+          piece.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+          piece.style.left = Math.random() * 100 + "%";
+          piece.style.animationDelay = Math.random() * 0.5 + "s";
+          piece.style.setProperty("--dx", (Math.random() - 0.5) * 200 + "px");
+          confettiWrap.appendChild(piece);
+        }
+        setTimeout(function () {
+          confettiWrap.innerHTML = "";
+        }, 2800);
+      }
+
+      // Cursor-follow hearts
+      const cursorHearts = document.getElementById("cursorHearts");
+      var cursorX = 0,
+        cursorY = 0;
+      var heartEls = [];
+      if (cursorHearts) {
+        for (var h = 0; h < 5; h++) {
+          var el = document.createElement("span");
+          el.className = "cursor-heart";
+          el.textContent = ["💕", "❤️", "💗"][h % 3];
+          el.style.left = "0px";
+          el.style.top = "0px";
+          el.style.transitionDelay = h * 0.03 + "s";
+          cursorHearts.appendChild(el);
+          heartEls.push({ el: el, x: 0, y: 0 });
+        }
+        document.addEventListener("mousemove", function (e) {
+          cursorX = e.clientX;
+          cursorY = e.clientY;
+        });
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length) {
+              cursorX = e.touches[0].clientX;
+              cursorY = e.touches[0].clientY;
+            }
+          },
+          { passive: true },
+        );
+        function updateCursorHearts() {
+          heartEls.forEach(function (heart, i) {
+            var off = 20 + i * 18;
+            var dx = cursorX - heart.x;
+            var dy = cursorY - heart.y;
+            heart.x += dx * 0.12;
+            heart.y += dy * 0.12;
+            heart.el.style.transform =
+              "translate(" +
+              (heart.x - 10) +
+              "px," +
+              (heart.y - 10) +
+              "px) scale(" +
+              (0.7 + i * 0.08) +
+              ")";
+            heart.el.style.opacity = 0.35 + i * 0.08;
+          });
+          requestAnimationFrame(updateCursorHearts);
+        }
+        updateCursorHearts();
+      }
+
+      const btnYes = document.getElementById("btnYes");
+      const btnNo = document.getElementById("btnNo");
+      const questionScreen = document.getElementById("questionScreen");
+      const successScreen = document.getElementById("successScreen");
+      const buttonsWrap = document.getElementById("buttonsWrap");
+      const bouquetScreen = document.getElementById("bouquetScreen");
+      const ringScreen = document.getElementById("ringScreen");
+
+      var transitionDur = 380;
+
+      let yesScale = 1;
+      let noClickCount = 0;
+
+      function getRandomPosition() {
+        const wrap = buttonsWrap.getBoundingClientRect();
+        const padding = 60;
+        return {
+          x: Math.random() * (wrap.width - padding * 2) + padding,
+          y: Math.random() * (wrap.height - padding * 2) + padding,
+        };
+      }
+
+      function moveNoButton() {
+        noClickCount++;
+        yesScale += 0.3;
+        btnYes.style.setProperty("--scale", Math.min(yesScale, 3));
+        btnYes.textContent = yesScale >= 2 ? "Say Yes! 💖" : "Yes! 💕";
+
+        const pos = getRandomPosition();
+        btnNo.style.left = pos.x + "px";
+        btnNo.style.top = pos.y + "px";
+        const scale = Math.max(0.4, 1 - noClickCount * 0.07);
+        btnNo.style.transform = "translate(-50%, -50%) scale(" + scale + ")";
+        if (noClickCount >= 6) {
+          btnNo.style.opacity = "0.25";
+          btnNo.textContent = "...Yes? 😊";
+        }
+      }
+
+      btnNo.addEventListener("mouseenter", moveNoButton);
+      btnNo.addEventListener("click", function (e) {
+        e.preventDefault();
+        moveNoButton();
+      });
+
+      btnYes.addEventListener("click", function () {
+        runConfetti();
+        questionScreen.classList.add("hide");
+        setTimeout(function () {
+          questionScreen.classList.remove("hide");
+          questionScreen.style.display = "none";
+          successScreen.style.display = "block";
+          successScreen.classList.add("show");
+          successScreen.classList.remove("hide");
+          document.title = "Nethmi said yes! 💕";
+        }, transitionDur);
+      });
+
+      const btnNextToBouquet = document.getElementById("btnNextToBouquet");
+      const btnNextToRing = document.getElementById("btnNextToRing");
+
+      btnNextToBouquet.addEventListener("click", function () {
+        successScreen.classList.add("hide");
+        setTimeout(function () {
+          successScreen.classList.remove("show");
+          successScreen.classList.add("hide");
+          successScreen.style.display = "none";
+          bouquetScreen.style.display = "flex";
+          bouquetScreen.classList.add("show");
+          bouquetScreen.classList.remove("hide");
+          document.title = "For you 💐";
+        }, transitionDur);
+      });
+
+      btnNextToRing.addEventListener("click", function () {
+        bouquetScreen.classList.add("hide");
+        setTimeout(function () {
+          bouquetScreen.classList.remove("show");
+          bouquetScreen.classList.add("hide");
+          bouquetScreen.style.display = "none";
+          ringScreen.style.display = "flex";
+          ringScreen.classList.add("show");
+          ringScreen.classList.remove("hide");
+          document.title = "For you 💍";
+        }, transitionDur);
+      });
+
+      const btnShowPromise = document.getElementById("btnShowPromise");
+      const promiseBox = document.getElementById("promiseBox");
+
+      btnShowPromise.addEventListener("click", function () {
+        promiseBox.classList.add("show");
+        btnShowPromise.style.display = "none";
+      });
+
+      // Replay - back to question
+      const btnReplay = document.getElementById("btnReplay");
+      if (btnReplay) {
+        btnReplay.addEventListener("click", function () {
+          ringScreen.classList.add("hide");
+          setTimeout(function () {
+            ringScreen.classList.remove("show");
+            ringScreen.classList.add("hide");
+            ringScreen.style.display = "none";
+            bouquetScreen.style.display = "none";
+            bouquetScreen.classList.remove("show");
+            bouquetScreen.classList.add("hide");
+            successScreen.style.display = "none";
+            successScreen.classList.remove("show");
+            successScreen.classList.add("hide");
+            questionScreen.style.display = "block";
+            questionScreen.classList.remove("hide");
+            document.title = "Will you be my Valentine, Nethmi? 💕";
+            if (promiseBox) promiseBox.classList.remove("show");
+            if (btnShowPromise) btnShowPromise.style.display = "";
+          }, transitionDur);
+        });
+      }
+    </script>
+  </body>
+</html>
